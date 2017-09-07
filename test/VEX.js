@@ -1,21 +1,24 @@
 var VEX = artifacts.require("./VEX.sol");
 
 contract('VEX', function(accounts) {
-    
-    it("say hello", function() {
+
+    var a = 5;
+    var b = 13;
+
+    it("Say hello", function() {
 	console.log("hello");
     });
 
-    it("add nums", function() {
+    it("Add two numbers", function() {
 
 	return VEX.deployed().then(function(instance) {
-	    func = instance.add.call;
-	    func(2,3).then(function(x) {
-		console.log("2 + 3 =",x.toNumber());
-		
-	    });
-	})
+	    return instance.add.call(a,b);
+	}).then(function(result) {
+	    assert.equal(a+b, result.toNumber());
+	    console.log(a + "+" + b + "=" + result.toNumber());	    
+	});
+
     });
-    
+
     
 });
