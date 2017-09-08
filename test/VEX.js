@@ -18,10 +18,10 @@ function test_network_function(func_name, a, b, expected_result) {
     }).then(function(result) {
 	log = result.logs[0]
 	val = log.args._value;
-	console.log(a + "+" + b + "=" + val.toNumber());
-	console.log("Mined on blockNumber", log.blockNumber);
-	console.log("Gas used: ", result.receipt.gasUsed);
-	assert.equal(a+b, val.toNumber());
+	console.log(func_name, a,b, "= " + val.toNumber());
+	console.log(" +", func_name, "mined on blockNumber "+log.blockNumber);
+	console.log(" +", func_name, "gas used "+result.receipt.gasUsed);
+	assert.equal(val.toNumber(), expected_result);
     });
 };
 
