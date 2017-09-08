@@ -1,0 +1,38 @@
+{
+  "contract_name": "VEX",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "int256"
+        },
+        {
+          "name": "y",
+          "type": "int256"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b609c8061001d6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663a5f3c23b8114603c575b600080fd5b3415604657600080fd5b60526004356024356064565b60405190815260200160405180910390f35b80820182015b929150505600a165627a7a72305820c450b5033fc046a479cb26b97db72b4d53fa650460be5cbd725d3fb037c2262b0029",
+  "networks": {
+    "1504800348281": {
+      "events": {},
+      "links": {},
+      "address": "0xe82538e6c7d25ba59cca422ae457a85d440c7845",
+      "updated_at": 1504805423999
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1504805597241
+}
