@@ -10,14 +10,21 @@ contract('VEX', function(accounts) {
     });
 
     it("Add two numbers", function() {
-
 	return VEX.deployed().then(function(instance) {
 	    return instance.add.call(a,b);
 	}).then(function(result) {
 	    assert.equal(a+b, result.toNumber());
 	    console.log(a + "+" + b + "=" + result.toNumber());	    
 	});
+    });
 
+    it("Subtract two numbers", function() {
+	return VEX.deployed().then(function(instance) {
+	    return instance.subtract.call(a,b);
+	}).then(function(result) {
+	    assert.equal(a-b, result.toNumber());
+	    console.log(a + "-" + b + "=" + result.toNumber());	    
+	});
     });
 
     
