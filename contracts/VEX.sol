@@ -9,5 +9,9 @@ contract VEX {
   function subtract(int x, int y) public returns (int) {
     return x-y;
   }
+
+  function multiply(int x, int y) public returns (int) {
+    return x*y;
+  }
   
 }

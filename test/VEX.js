@@ -27,5 +27,13 @@ contract('VEX', function(accounts) {
 	});
     });
 
+    it("Multiply two numbers", function() {
+	return VEX.deployed().then(function(instance) {
+	    return instance.multiply.call(a,b);
+	}).then(function(result) {
+	    assert.equal(a*b, result.toNumber());
+	    console.log(a + "*" + b + "=" + result.toNumber());	    
+	});
+    });
     
 });
