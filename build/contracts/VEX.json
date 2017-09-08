@@ -1,38 +1,33 @@
 {
   "contract_name": "VEX",
-  "abi": [
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "x",
-          "type": "int256"
-        },
-        {
-          "name": "y",
-          "type": "int256"
-        }
-      ],
-      "name": "add",
-      "outputs": [
-        {
-          "name": "",
-          "type": "int256"
-        }
-      ],
-      "payable": false,
-      "type": "function"
-    }
-  ],
-  "unlinked_binary": "0x60606040523415600e57600080fd5b5b609c8061001d6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663a5f3c23b8114603c575b600080fd5b3415604657600080fd5b60526004356024356064565b60405190815260200160405180910390f35b80820182015b929150505600a165627a7a72305820c450b5033fc046a479cb26b97db72b4d53fa650460be5cbd725d3fb037c2262b0029",
+  "abi": [],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a72305820257159da9c964f1fc7894233511a2a33a95323d7120b8be696215eca4f07de730029",
   "networks": {
     "1504800348281": {
       "events": {},
       "links": {},
       "address": "0xe82538e6c7d25ba59cca422ae457a85d440c7845",
       "updated_at": 1504805423999
+    },
+    "1504883463768": {
+      "events": {},
+      "links": {},
+      "address": "0x23d5af5293adde2b481447d9003c084c1c33197c",
+      "updated_at": 1504901208704
+    },
+    "1504901228047": {
+      "events": {},
+      "links": {},
+      "address": "0x64da3d9c5d91efd75320d8a65a2130041317d70a",
+      "updated_at": 1504901233305
+    },
+    "1504901849092": {
+      "events": {},
+      "links": {},
+      "address": "0x6563da368d66f85ef0808ff5fab6684b05a39f45",
+      "updated_at": 1504901850043
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1504805597241
+  "updated_at": 1504901850043
 }
