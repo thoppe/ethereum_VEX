@@ -54,4 +54,13 @@ contract('VEX', function(accounts) {
 	test_network_function("network_add", a, b, a+b);
     });
 
+    it("Subtract two numbers on the network", function() {
+	test_network_function("network_subtract", a, b, a-b);
+    });
+
+    it("Multiply two numbers on the network", function() {
+	test_network_function("network_multiply", a, b, a*b);
+    });
+
+
 });

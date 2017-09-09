@@ -19,6 +19,13 @@ contract VEX {
   function network_add(int x, int y) public {
     result(add(x,y));
   }
-  
 
+  function network_subtract(int x, int y) public {
+    result(subtract(x,y));
+  }
+  
+  function network_multiply(int x, int y) public {
+    result(multiply(x,y));
+  }
+  
 }
