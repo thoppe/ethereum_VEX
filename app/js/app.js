@@ -36,10 +36,46 @@ App = {
 
 	return App.bindEvents();
     },
-
     
     bindEvents: function() {
-	$(document).on('click', '.btn-adopt', App.handleAdopt);
+	$(document).on('click', '.btn-process', App.processButton);
+    },
+
+    
+    processButton: function() {
+
+	var x = parseInt($("#data_x").val());
+	var y = parseInt($("#data_y").val());
+	console.log("Button pressed with",x,y);
+
+	/*
+
+
+	//event.preventDefault();
+
+	var petId = parseInt($(event.target).data('id'));
+
+	var adoptionInstance;
+
+	web3.eth.getAccounts(function(error, accounts) {
+	    if (error) {
+		console.log(error);
+	    }
+
+	    var account = accounts[0];
+
+	    App.contracts.Adoption.deployed().then(function(instance) {
+		adoptionInstance = instance;
+
+		return adoptionInstance.adopt(petId, {from: account});
+	    }).then(function(result) {
+		return App.markAdopted();
+	    }).catch(function(err) {
+		console.log(err.message);
+	    });
+	});
+	*/
+	
     },
 
 };
