@@ -23,10 +23,18 @@ App = {
     },
 
     initContract: function() {	
+	
+	web3.eth.getAccounts(function(error, accounts) {
+	    if (error) {
+		console.log(error);
+	    }
+
+	    var account = accounts[0];
+	    $('#account_hash').text(accounts);
+
+	});
+
 	return App.bindEvents();
-
-	console.log("hello");
-
     },
 
     
