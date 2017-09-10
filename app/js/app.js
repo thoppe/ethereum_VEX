@@ -1,6 +1,18 @@
 var provider_url = 'http://localhost:8545';
 var f_deployed_contract = './build/contracts/VEX.json';
 
+function update_result(res) {
+    $('#result').text(res.logs[0].args._value);
+    $('#transactionHash').text(res.receipt.transactionHash);
+    $('#blockNumber').text(res.receipt.blockNumber);
+    $('#gasUsed').text(res.receipt.gasUsed);
+};
+
+function report_error(x) {
+    $('#errorbox').append(x);
+    console.log(x);
+}
+
 App = {
     web3Provider: null,
     contracts: {},
@@ -27,7 +39,7 @@ App = {
 	
 	web3.eth.getAccounts(function(error, accounts) {
 	    if (error) {
-		console.log(error);
+		report_error(error);
 	    }
 
 	    var account = accounts[0];
@@ -41,33 +53,12 @@ App = {
 	    //console.log( App.contracts.VEX );
 	});
 	
-
-	web3.eth.getAccounts(function(error, accounts) {
-
-	    App.contracts.VEX.deployed().then(function(vex) {
-		return vex.add.call(2,3);
-	    }).then(function(result) {
-		console.log("Simple Add",parseInt(result));
-	    }).catch(function(err) {
-		console.log(err.message);
-	    });
-
-
-	    App.contracts.VEX.deployed().then(function(vex) {
-		return vex.add.call(2,7);
-	    }).then(function(result) {
-		console.log("Simple Add",parseInt(result));
-	    }).catch(function(err) {
-		console.log(err.message);
-	    });
-	    
-	});
-
 	return App.bindEvents();
     },
     
     bindEvents: function() {
 	$(document).on('click', '.btn-process', App.processButton);
+	//App.processButton();
     },
 
     
@@ -77,33 +68,31 @@ App = {
 	var y = parseInt($("#data_y").val());
 	console.log("Button pressed with",x,y);
 
-	/*
-
-
-	//event.preventDefault();
-
-	var petId = parseInt($(event.target).data('id'));
-
-	var adoptionInstance;
-
 	web3.eth.getAccounts(function(error, accounts) {
-	    if (error) {
-		console.log(error);
-	    }
 
-	    var account = accounts[0];
-
-	    App.contracts.Adoption.deployed().then(function(instance) {
-		adoptionInstance = instance;
-
-		return adoptionInstance.adopt(petId, {from: account});
+	    /*
+	    App.contracts.VEX.deployed().then(function(vex) {
+		return vex.add.call(x,y);
 	    }).then(function(result) {
-		return App.markAdopted();
+		update_result(result);
 	    }).catch(function(err) {
-		console.log(err.message);
+		report_error(err.message);
 	    });
+	    */
+
+	    
+	    App.contracts.VEX.deployed().then(function(vex) {
+		return vex.network_add(x,y);
+	    }).then(function(result) {
+		//console.log(result);
+		update_result(result);
+	    }).catch(function(err) {
+		report_error(err.message);
+	    });
+	    
+	    
 	});
-	*/
+
 	
     },
 
