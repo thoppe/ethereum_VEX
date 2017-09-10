@@ -1,4 +1,5 @@
-var provider_url = 'http://localhost:8545'
+var provider_url = 'http://localhost:8545';
+var f_deployed_contract = './build/contracts/VEX.json';
 
 App = {
     web3Provider: null,
@@ -32,6 +33,34 @@ App = {
 	    var account = accounts[0];
 	    $('#account_hash').text(accounts);
 
+	});
+
+	$.getJSON(f_deployed_contract, function(data) {
+	    App.contracts.VEX = TruffleContract(data);
+	    App.contracts.VEX.setProvider(App.web3Provider);
+	    //console.log( App.contracts.VEX );
+	});
+	
+
+	web3.eth.getAccounts(function(error, accounts) {
+
+	    App.contracts.VEX.deployed().then(function(vex) {
+		return vex.add.call(2,3);
+	    }).then(function(result) {
+		console.log("Simple Add",parseInt(result));
+	    }).catch(function(err) {
+		console.log(err.message);
+	    });
+
+
+	    App.contracts.VEX.deployed().then(function(vex) {
+		return vex.add.call(2,7);
+	    }).then(function(result) {
+		console.log("Simple Add",parseInt(result));
+	    }).catch(function(err) {
+		console.log(err.message);
+	    });
+	    
 	});
 
 	return App.bindEvents();
