@@ -6,6 +6,7 @@ function update_result(res) {
     $('#transactionHash').text(res.receipt.transactionHash);
     $('#blockNumber').text(res.receipt.blockNumber);
     $('#gasUsed').text(res.receipt.gasUsed);
+    console.log("Result was", res.logs[0].args._value);
 };
 
 function report_error(x) {
@@ -57,12 +58,25 @@ App = {
     },
     
     bindEvents: function() {
-	$(document).on('click', '.btn-process', App.processButton);
-	//App.processButton();
+	$(document).on('click', '.btn-process-add', App.processButtonAdd);
+	$(document).on('click', '.btn-process-multiply', App.processButtonMul);
+	$(document).on('click', '.btn-process-subtract', App.processButtonSub);
+    },
+
+    processButtonAdd: function() {
+	App.processButton("network_add");
+    },
+
+    processButtonSub: function() {
+	App.processButton("network_subtract");
+    },
+
+    processButtonMul: function() {
+	App.processButton("network_multiply");
     },
 
     
-    processButton: function() {
+    processButton: function(func_name) {
 
 	var x = parseInt($("#data_x").val());
 	var y = parseInt($("#data_y").val());
@@ -79,12 +93,10 @@ App = {
 		report_error(err.message);
 	    });
 	    */
-
 	    
 	    App.contracts.VEX.deployed().then(function(vex) {
-		return vex.network_add(x,y);
+		return vex[func_name](x,y);
 	    }).then(function(result) {
-		//console.log(result);
 		update_result(result);
 	    }).catch(function(err) {
 		report_error(err.message);
