@@ -5,3 +5,6 @@ def build():
 
 def test():
     local("truffle test")
+
+def serve():
+    local("npm run dev")
