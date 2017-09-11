@@ -7,5 +7,5 @@ def test():
     local("truffle test")
 
 def serve():
-    local("cp -rf build/contracts docs/")
+    local("cp -rf build docs/")
     local("npm run dev")
