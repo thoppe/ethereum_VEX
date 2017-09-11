@@ -7,16 +7,21 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>VEX</title>
 
-    <!-- Bootstrap -->
+    <!-- 
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/docs.min.css" rel="stylesheet">
+    
+    Bootstrap -->
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     
   </head>
-  <body class="bd-docs">
 
-    <div class="bd-pageheader">
+  <body>
+    
+    <div class="">
       <div class="container">
-	<h1>VEX</h1>
+	<h1 style="font-size:600%">VEX</h1>
 	<p class="lead">Very EXpensive calculations on the blockchain</p>	
       </div>
     </div>
@@ -48,40 +53,44 @@
 	      type="button" data-id="0">Subtract</button>
 
       <button class="btn btn-group btn-process-multiply"
-		type="button" data-id="0">Multiply</button>
+	      type="button" data-id="0">Multiply</button>
     </div>
     
 
     <div class="container">
-      <h1 id="result">RESULT</h1>
-
-      <div class="row">
-	<div class="col-xs-6">Account hash:</div>
-	<div class="col-xs-6" id="account_hash">VOID</div>
-      </div>
-
-      <div class="row">
-	<div class="col-xs-6">Transaction hash:</div>
-	<div class="col-xs-6" id="transactionHash"></div>
-      </div>
-
+      <h1 id="result">No result calculated yet</h1>
       
-      <div class="row">
-	<div class="col-xs-6">Block number:</div>
-	<div class="col-xs-6" id="blockNumber"></div>
-      </div>
-      
-      <div class="row">
-	<div class="col-xs-6">Gas Used:</div>
-	<div class="col-xs-6" id="gasUsed"></div>
-      </div>
-      
-    </div>
+
+    <table class="table table-striped">
+    <tbody>
+      <tr>
+	<td>Account hash:</td>
+	<td id="account_hash">VOID</td>
+        </tr>
+      <tr>
+	<td>Transaction hash:</td>
+	<td id="transactionHash"></td>
+      </tr>
+
+      <tr>
+	<td>Block Number:</td>
+	<td id="blockNumber"></td>
+      </tr>
+
+      <tr>
+	<td>Gas Used</td>
+	<td id="gasUsed"></td>
+      </tr>
+    </tbody>
+    </table>
+        </div>
 
 
     <div class="container">
       <p id="errorbox"></p>
     </div>
+
+
     
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -94,8 +103,8 @@
     <script src="js/app.js"></script>
 
     <!---
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-    --->
+	<script src="js/truffle-contract.js"></script>
+	<script src="js/app.js"></script>
+	--->
   </body>
 </html>
