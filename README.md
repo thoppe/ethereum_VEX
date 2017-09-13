@@ -4,6 +4,8 @@ VEX is a Very EXpensive calculator built as a smart-contract on the Etherium blo
 
 [0x4f5a4501f96cb95eEDA376F4caa0B24F4dbBD796](https://etherscan.io/address/0x4f5a4501f96cb95eeda376f4caa0b24f4dbbd796)
 
+### Screenshot
+
 ![](docs/Screenshot_demo.png)
 
 ### Run tests
