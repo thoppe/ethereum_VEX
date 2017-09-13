@@ -1,11 +1,14 @@
 var provider_url = 'http://localhost:8545';
 var f_deployed_contract = './build/contracts/VEX.json';
 var mainchain_address = '0x4f5a4501f96cb95eeda376f4caa0b24f4dbbd796';
+var ESUrl = "https://etherscan.io"
 
 function update_result(res) {
     $('#result').text(res.logs[0].args._value);
-    $('#transactionHash').text(res.receipt.transactionHash);
-    $('#blockNumber').text(res.receipt.blockNumber);
+    $('#transactionHash').text(res.receipt.transactionHash)
+    	.attr('href', ESUrl+"/tx/"+res.receipt.transactionHash);
+    $('#blockNumber').text(res.receipt.blockNumber)
+	.attr('href', ESUrl+"/block/"+res.receipt.blockNumber);
     $('#gasUsed').text(res.receipt.gasUsed);
     console.log("Result was", res.logs[0].args._value);
 };
@@ -42,11 +45,7 @@ App = {
     initContract: function() {	
 	
 	web3.eth.getAccounts(function(error, accounts) {
-	    if (error) {
-		report_error(error);
-	    }
-	    var account = accounts[0];
-	    $('#account_hash').text(accounts);
+	    if (error) { report_error(error); }
 	});
 
 	// Load the contract data from file
@@ -71,6 +70,9 @@ App = {
     checkNetworkStatus: function() {
 	web3.eth.getAccounts(function(error, accounts) {
 	    App.getContractDeploy().then(function(vex) {
+		$('#contractHash').text(vex.address)
+    		    .attr('href', ESUrl+"/address/"+vex.address);
+		console.log(vex);
 	    }).catch(function(err) {
 		report_error(err.message);
 	    });
