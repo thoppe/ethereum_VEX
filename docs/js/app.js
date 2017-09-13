@@ -22,7 +22,7 @@ function report_error(x) {
 App = {
     web3Provider: null,
     contracts: {},
-    useLive: false,
+    useLive: App.useLive = $(this).prop('checked'),
 
     init: function() {
 	return App.initWeb3();
