@@ -22,7 +22,6 @@ function report_error(x) {
 App = {
     web3Provider: null,
     contracts: {},
-    useLive: App.useLive = $(this).prop('checked'),
 
     init: function() {
 	return App.initWeb3();
@@ -38,7 +37,6 @@ App = {
 	    App.web3Provider = new web3.providers.HttpProvider(provider_url);
 	    web3 = new Web3(App.web3Provider);
 	}
-
 	return App.initContract();
     },
 
@@ -59,7 +57,9 @@ App = {
     },
 
     getContractDeploy: function() {
-	if (App.useLive) {
+
+	var toggle = $("#mainnet").prop('checked');
+	if (toggle) {
 	    return App.contracts.VEX.at(mainchain_address);
 	}
 	else {
@@ -86,7 +86,6 @@ App = {
 
 	$('#mainnet').change(function() {
 	    $('#errorbox').empty().hide();
-	    App.useLive = $(this).prop('checked');
 	    App.checkNetworkStatus();
 	});
 
