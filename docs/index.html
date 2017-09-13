@@ -7,6 +7,7 @@
     <title>VEX</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
     
   </head>
 
@@ -26,15 +27,27 @@
 
       <div class="row">
 
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 	  <input type="number" class="form-control"
 		 id="data_x" value="3">
 	</div>
 
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 	  <input type="number" class="form-control"
 		 id="data_y" value="7">
 	</div>
+
+	<div class="col-xs-4">
+	  <label class="checkbox-inline">
+	    <input id="mainnet"
+		   data-on="Live"
+		   data-off="Test"
+		   data-onstyle="danger"
+		   data-toggle="toggle"
+		   type="checkbox">
+	  </label>
+	</div>
+	 
       </div>
     </div>
     
@@ -50,6 +63,7 @@
 
       <button class="btn btn-group btn-process-multiply"
 	      type="button" data-id="0">Multiply</button>
+
     </div>
     
 
@@ -82,8 +96,9 @@
     </div>
 
 
-    <div class="container">
-      <p id="errorbox"></p>
+    <div id="errorbox"
+	 style="display:none"
+	 class="container alert alert-danger" role="alert">
     </div>
 
     <footer class="bd-footer text-muted">
@@ -100,6 +115,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+
     <script src="js/web3.min.js"></script>
 
     <script src="js/truffle-contract.js"></script>
