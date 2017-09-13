@@ -1,4 +1,4 @@
-## [VEX](https://thoppe.github.io/etherium_VEX/index.html)
+## [VEX](https://thoppe.github.io/ethereum_VEX/index.html)
 
 VEX is a Very EXpensive calculator built as a smart-contract on the Ethereum blockchain. It is a proof-of-concept to show that arbitrary computations can be run on the blockchain by external computers (if you're willing to pay for it). The contract is deployed on the mainnet at the address
 
