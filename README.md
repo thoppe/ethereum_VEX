@@ -4,27 +4,32 @@ VEX is a Very EXpensive calculator built as a smart-contract on the Etherium blo
 
 ![](docs/Screenshot_demo.png)
 
-### Run the webserver
+### Run tests
 
-    npm run dev
+    fab serve
+
+### Run local instance
+
+    testrpc # now open new window
+    truffle migrate
+    fab serve
 
 ### Setup on stock Ubuntu
 
     # Basic dependencies
     sudo apt-get install git build-essential
 
-    # install nvm
+    # Install nvm
     sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
 
     # Install nodejs/npm
     nvm install 8
 
-    # Install ethereum dependices
+    # Install ethereum dependices and a server
     npm install -g ethereumjs-testrpc
     npm install -g truffle
+    npm install -g lite-server
 
+    # Install metamask (Chrome Extension)
 
-    # Install the webpackage locally
-    npm install lite-server
-
-    # Install metamask
+    # Install fabric
